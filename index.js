@@ -24,7 +24,8 @@ for (var i = 0; i < 360; i++) {
     document.getElementById('colorwheel').appendChild(colorStrip);
 };
 
-document.getElementById('colorwheel').addEventListener('pointermove',
+
+document.getElementById('colorwheel').addEventListener('mousedown',
     (event) => {
         event.stopPropagation();
         event.preventDefault();
@@ -50,6 +51,8 @@ document.getElementById('colorwheel').addEventListener('pointermove',
             document.getElementById('fore').style.backgroundColor = fore;
         }
     });
+
+
 
 document.getElementById('color_canvas').addEventListener('pointermove',
     (event) => {
@@ -103,4 +106,3 @@ function hslToRGB(h) {
     b = Math.round((b + m) * 255);
     return { bg: `rgb(${r}, ${g}, ${b})`, fore: `rgb(${255 - r}, ${255 - g}, ${255 - b})` }
 }
-
